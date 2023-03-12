@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+.content {
+  max-width: 1440px;
+  width: "100%";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.memes-card {
+  display: flex;
+  flex-direction: column;
+}
+.memes-card:hover {
+  cursor: pointer;
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.125rem;
+  height: 3rem;
+}
+.image-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s;
+}
+
+.memes-card:hover .header-wrapper {
+  cursor: pointer;
+  color: red;
+  transition: all 0.5s;
+}
+.memes-card:hover .image-wrapper {
+  max-height: 50rem;
+}
+/* .chb {
+    display: none;
+} */
+
+.chb:checked +.image-wrapper {
+  max-height: 50rem;
+}
