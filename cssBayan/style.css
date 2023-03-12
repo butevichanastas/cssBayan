@@ -2,11 +2,14 @@
 
 body {
   font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 .content {
-  max-width: 1440px;
-  width: "100%";
+  max-width: 90rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,9 +17,20 @@ body {
 .memes-card {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  gap: 1rem;
+  border-top: 2px solid gray;
 }
 .memes-card:hover {
   cursor: pointer;
+}
+.memes-card:hover .plus-icon {
+  transform: rotate(45deg);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .header-wrapper {
   display: flex;
@@ -24,25 +38,65 @@ body {
   justify-content: space-between;
   border-top: 0.125rem;
   height: 3rem;
+  max-width: 36rem;
+}
+.plus-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: all 0.3s;
+}
+/* .cross-icon {
+  transform: rotate(15deg)
+} */
+input {
+  display: none;
 }
 .image-wrapper {
+  display: flex;
   overflow: hidden;
   max-height: 0;
   transition: all 0.5s;
+  justify-content: center;
 }
-
+.image-wrapper img{
+  max-width: 100%;
+}
 .memes-card:hover .header-wrapper {
   cursor: pointer;
-  color: red;
-  transition: all 0.5s;
+  color: #3f888f;
+  font-weight: 500;
+  transition: all 0.4s;
 }
 .memes-card:hover .image-wrapper {
   max-height: 50rem;
 }
-/* .chb {
-    display: none;
-} */
+.plus-icon:hover {
+  transform: rotate(45deg);
+}
 
-.chb:checked +.image-wrapper {
+.chb:checked + .image-wrapper {
   max-height: 50rem;
+}
+
+/* придумать чтоб работало */
+.chb:checked .plus-icon {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 51.25rem) {
+  body {
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-style: 2rem;
+  }
+}
+
+@media (max-width: 20rem) {
+  body {
+    font-size: 1rem;
+  }
+  h1 {
+    font-style: 1.5rem;
+  }
 }
